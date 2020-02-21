@@ -7,11 +7,9 @@ class Post extends Component {
 
     render() {
         return (
-            <li>
-                <div>
-                    <p className="post-user">{this.props.post.username}</p>
-                </div>
-            </li>
+            <div>
+                Post.js
+            </div>
         )
     }
 }
