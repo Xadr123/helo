@@ -9,10 +9,11 @@ class Nav extends Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div className="navbar">
                 <section className="profile-info">
-                    <img src="https://s3.amazonaws.com/37assets/svn/765-default-avatar.png" height="50px" width="50px" />
+                    <img src="https://i.ya-webdesign.com/images/default-image-png-1.png" height="50px" width="50px" style={{ borderRadius: "100%" }} />
                     <p>{this.props.username}</p>
                 </section>
                 <section className="nav-buttons">

@@ -48,26 +48,38 @@ class Auth extends Component {
 
     render() {
         return (
-            <div>
-                <input
-                    maxLength='20'
-                    placeholder='Enter Username'
-                    name='username'
-                    onChange={this.handleInput}
-                />
-                <input
-                    type='password'
-                    maxLength='20'
-                    placeholder='Enter Password'
-                    name='password'
-                    onChange={this.handleInput}
-                />
-                <button onClick={this.handleLogin}>
-                    Login
-                </button>
-                <button onClick={this.handleRegister}>
-                    Register
-                </button>
+            <div className="auth-page">
+                <div className="login-form">
+                    <img src="https://raw.githubusercontent.com/DevMountain/simulation-3/master/assets/helo_logo.png" width="125px" height="125px" style={{ alignSelf: 'center' }} />
+                    <h1 style={{ color: 'white', alignSelf: 'center' }} >HELO</h1>
+                    <section className="auth-inputs">
+                        <div className="input-forms">
+                            Username: <input
+                                maxLength='20'
+                                placeholder='Enter Username'
+                                name='username'
+                                onChange={this.handleInput}
+                            />
+                        </div>
+                        <div className="input-forms" style={{ marginTop: "10px" }}>
+                            Password: <input
+                                type='password'
+                                maxLength='20'
+                                placeholder='Enter Password'
+                                name='password'
+                                onChange={this.handleInput}
+                            />
+                        </div>
+                    </section>
+                    <section className="form-buttons">
+                        <button onClick={this.handleLogin}>
+                            Login
+                        </button>
+                        <button onClick={this.handleRegister}>
+                            Register
+                        </button>
+                    </section>
+                </div>
             </div>
         )
     }

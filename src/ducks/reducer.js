@@ -17,7 +17,8 @@ export function getUser(userObj) {
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case GET_USER:
-            return { ...state, ...action.payload }
+            console.log(action.payload)
+            return { ...state, ...action.payload, userId: action.payload.id }
         default:
             return state;
     }

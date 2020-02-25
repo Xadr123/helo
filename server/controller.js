@@ -42,24 +42,29 @@ module.exports = {
         const db = req.app.get('db')
 
         const posts = await db.get_posts([id])
-        if (userposts && search) {
+        if (userposts === "true" && search) {
+            console.log("1")
             const filteredPosts = posts.filter(e => {
-                e.title == search
+                return e.title.includes(search)
             })
             res.status(200).send(filteredPosts)
-        } else if (!userposts && !search) {
+        } else if (userposts !== "true" && !search) {
+            console.log("2")
             const filteredPosts = posts.filter(e => {
                 let userId = id
-                e.id != userId
+                console.log({ id, author: e.author_id })
+                return e.author_id !== +userId
             })
             res.status(200).send(filteredPosts)
-        } else if (!userposts && search) {
+        } else if (userposts !== "true" && search) {
+            console.log("3")
             const filteredPosts = posts.filter(e => {
                 let userId = id
-                e.id != userId && e.title == search
+                return e.author_id !== +userId && e.title.includes(search)
             })
             res.status(200).send(filteredPosts)
         } else {
+            console.log('hit', posts)
             res.status(200).send(posts)
         }
     }

@@ -21,4 +21,4 @@ massive({
 
 app.post('/api/register', ctrl.register)
 app.post('/api/login', ctrl.login)
-app.get('/api/posts/:userid', ctrl.getPosts)
+app.get('/api/posts/:id', ctrl.getPosts)
